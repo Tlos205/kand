@@ -20,20 +20,11 @@ if READ_DOT_ENV_FILE:
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = env.bool("DJANGO_DEBUG", False)
-# Local time zone. Choices are
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# though not all of them may be available with every OS.
-# In Windows, this must be set to your system time zone.
-TIME_ZONE = "moscow"
+
+TIME_ZONE = "Europe/Moscow"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-us"
-# https://docs.djangoproject.com/en/dev/ref/settings/#languages
-# from django.utils.translation import gettext_lazy as _
-# LANGUAGES = [
-#     ('en', _('English')),
-#     ('fr-fr', _('French')),
-#     ('pt-br', _('Portuguese')),
-# ]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
@@ -87,7 +78,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "kand.users",
-    # Your stuff: custom apps go here
+    "kand.recruit",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -131,9 +122,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# MIDDLEWARE
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "corsheaders.middleware.CorsMiddleware",
